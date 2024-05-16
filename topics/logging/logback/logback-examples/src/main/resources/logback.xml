@@ -1,0 +1,103 @@
+<configuration>
+
+    <!-- Файловый Appender с JSON-форматом -->
+    <appender name="JSON_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>topics/logging/logback/logback-examples/logs/app.json</file>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <!-- Включаем контекст MDC -->
+            <includeMdcKeyName>userId</includeMdcKeyName>
+            <includeMdcKeyName>transactionId</includeMdcKeyName>
+            <includeMdcKeyName>sessionId</includeMdcKeyName>
+
+            <!-- Пользовательские поля JSON -->
+            <customFields>{"application":"MyApp","environment":"production"}</customFields>
+        </encoder>
+    </appender>
+
+    <!-- Файловый Appender с JSON-форматом 2 -->
+    <appender name="JSON_FILE_2" class="ch.qos.logback.core.FileAppender">
+        <file>topics/logging/logback/logback-examples/logs/app-2.json</file>
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <pattern>
+                    <omitEmptyFields>true</omitEmptyFields>
+                    <pattern>
+                        {
+                        "timestamp": "%date{yyyy-MM-dd'T'HH:mm:ss.SSS}",
+                        "request_uid": "%mdc{request_uid}",
+                        "request_address": "%mdc{request_address}",
+                        "request_time": "%mdc{request_time}",
+                        "response_time": "%date{yyyy-MM-dd'T'HH:mm:ss.SSS}",
+                        "request_method": "%mdc{request_method}",
+                        "request_url": "%mdc{request_url}",
+                        "user_name": "%mdc{user_name}",
+                        "native_id": "%mdc{native_id}",
+                        "native_type": "%mdc{native_type}",
+                        "action_code": "%mdc{action_code}",
+                        "action_status": "%mdc{action_status}",
+                        "response_status": "%mdc{response_status}",
+                        "request": "%mdc{request}",
+                        "response": "%mdc{response}"
+                        }
+                    </pattern>
+                </pattern>
+            </providers>
+        </encoder>
+    </appender>
+
+
+    <!-- Консольный Appender -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %highlight(%-5level) %logger{36}.%file:%line %X{userId} %mdc{sessionId} - %msg%n%ex
+            </pattern>
+        </encoder>
+    </appender>
+
+
+    <!-- PostgreSQL DB Appender -->
+    <appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
+        <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+            <driverClass>org.postgresql.Driver</driverClass>
+            <url>jdbc:postgresql://localhost:5432/postgres</url>
+            <user>postgres</user>
+            <password>postgres</password>
+        </connectionSource>
+    </appender>
+
+    <!-- Файловый Appender -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>topics/logging/logback/logback-examples/logs/app.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Асинхронный Appender -->
+    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="FILE"/>
+        <!-- Размер очереди для лог-сообщений -->
+        <queueSize>500</queueSize>
+        <!-- Поведение при переполнении очереди (0 означает сбрасывать все сообщения) -->
+        <discardingThreshold>0</discardingThreshold>
+        <!-- Максимальное время ожидания для завершения записи логов при завершении работы -->
+        <maxFlushTime>1000</maxFlushTime>
+        <!-- Флаг, указывающий, должна ли выполняться логика сброса данных -->
+        <includeCallerData>false</includeCallerData>
+    </appender>
+
+    <!-- Настройка корневого логгера -->
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="DB"/>
+        <appender-ref ref="ASYNC"/>
+    </root>
+
+    <!-- Настройка корневого логгера -->
+    <root level="INFO">
+        <appender-ref ref="JSON_FILE"/>
+        <appender-ref ref="JSON_FILE_2"/>
+    </root>
+
+</configuration>
