@@ -1,0 +1,6 @@
+# Параметры для бинов
+broker:
+  name: DefaultBroker
+
+analyst:
+  name: DefaultAnalyst
