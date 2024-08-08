@@ -1,4 +1,4 @@
-package InnovativeBuddies.patterns.observer;
+package innovativebuddies.universecommons.patterns.observer;
 
 public interface Subject {
     void registerObserver(Observer observer);

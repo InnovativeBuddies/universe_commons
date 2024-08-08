@@ -27,27 +27,27 @@
 
 ### 1. Определение интерфейсов
 
-#### [Observer.java](src/main/java/InnovativeBuddies/patterns/observer/Observer.java)
+#### [Observer.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/Observer.java)
 
-#### [Subject.java](src/main/java/InnovativeBuddies/patterns/observer/Subject.java)
+#### [Subject.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/Subject.java)
 
 ### 2. Реализация субъекта
 
-#### [StockMarket.java](src/main/java/InnovativeBuddies/patterns/observer/StockMarket.java)
+#### [StockMarket.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/StockMarket.java)
 
 ### 3. Реализация наблюдателей
 
-#### [Broker.java](src/main/java/InnovativeBuddies/patterns/observer/Broker.java)
+#### [Broker.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/Broker.java)
 
-#### [StockAnalyst.java](src/main/java/InnovativeBuddies/patterns/observer/StockAnalyst.java)
+#### [StockAnalyst.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/StockAnalyst.java)
 
 ### 4. Приложение
 
-#### [SyncApplication.java](src/main/java/InnovativeBuddies/patterns/observer/Main.java)
+#### [SyncApplication.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/Main.java)
 
 ### 5. Многопоточное приложение
 
-#### [AsyncApplication.java](src/main/java/InnovativeBuddies/patterns/observer/async/AsyncApplication.java)
+#### [AsyncApplication.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/async/AsyncApplication.java)
 
 > Этот пример демонстрирует использование паттерна "Наблюдатель" [3.1] в асинхронном приложении. Основной компонент асинхронно обновляет цены акций и уведомляет зарегистрированных
 > наблюдателей о каждом изменении. Это позволяет эффективно управлять состоянием системы и обеспечивает гибкость и масштабируемость.

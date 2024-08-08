@@ -1,4 +1,4 @@
-package InnovativeBuddies.patterns.observer.async;
+package innovativebuddies.universecommons.patterns.observer.async;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

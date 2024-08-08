@@ -1,4 +1,4 @@
-package InnovativeBuddies.patterns.observer;
+package innovativebuddies.universecommons.patterns.observer;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ConcurrentHashMap;

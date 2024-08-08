@@ -3,23 +3,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>InnovativeBuddies</groupId>
-    <artifactId>universe_commons</artifactId>
+    <groupId>innovativebuddies</groupId>
+    <artifactId>universe-commons</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>universe_commons</name>
-    <description>Repository containing a set of common tools, design patterns and utilities that can be useful in various projects</description>
+    <name>Universe Commons</name>
+    <description>Repository containing a set of common tools, design patterns, and utilities that can be useful in various projects</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <modules>
-        <module>topics/patterns/observer</module>
+        <module>topics/patterns/examples</module>
     </modules>
 
     <properties>
@@ -43,10 +42,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
 
         <!-- Spring Boot Starter for Async -->

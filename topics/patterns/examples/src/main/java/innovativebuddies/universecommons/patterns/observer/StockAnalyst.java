@@ -1,4 +1,4 @@
-package InnovativeBuddies.patterns.observer;
+package innovativebuddies.universecommons.patterns.observer;
 
 public class StockAnalyst implements Observer {
     private final String name;

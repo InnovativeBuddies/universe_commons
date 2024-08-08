@@ -1,4 +1,4 @@
-package InnovativeBuddies.patterns.observer.async;
+package innovativebuddies.universecommons.patterns.observer.async;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package InnovativeBuddies.patterns.observer;
+package innovativebuddies.universecommons.patterns.observer;
 
 public class Main {
     public static void main(String[] args) {

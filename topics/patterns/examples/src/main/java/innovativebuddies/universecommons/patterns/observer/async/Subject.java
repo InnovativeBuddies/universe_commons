@@ -1,4 +1,4 @@
-package InnovativeBuddies.patterns.observer.async;
+package innovativebuddies.universecommons.patterns.observer.async;
 
 /**
  * Интерфейс субъекта, который управляет наблюдателями и уведомляет их об изменениях.

@@ -1,4 +1,4 @@
-package InnovativeBuddies.patterns.observer.async;
+package innovativebuddies.universecommons.patterns.observer.async;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
