@@ -2,8 +2,8 @@
 
 ## Описание
 
-Паттерн "Наблюдатель" [3.1] определяет зависимость "один ко многим" между объектами таким образом, что при изменении состояния одного объекта все зависимые объекты уведомляются и
-обновляются автоматически. Этот паттерн используется для создания системы, где объекты могут подписываться на события, происходящие в другом объекте.
+Паттерн "Наблюдатель" [[3.1]](../../../../../../../general/SHORT_DESCRIPTIONS_OF_PETTERNS.md) определяет зависимость "один ко многим" между объектами таким образом, что при изменении состояния одного
+объекта все зависимые объекты уведомляются и обновляются автоматически. Этот паттерн используется для создания системы, где объекты могут подписываться на события, происходящие в другом объекте.
 
 ## Применение
 
@@ -22,32 +22,32 @@
 
 ## Пример реализации
 
-Рассмотрим пример реализации паттерна "Наблюдатель" [3.1] на языке Java 21. В этом примере мы создадим систему управления фондовой биржей, где различные компоненты (брокеры,
-аналитические модули) подписываются на обновления цен акций.
+Рассмотрим пример реализации паттерна "Наблюдатель" [[3.1]](../../../../../../../general/SHORT_DESCRIPTIONS_OF_PETTERNS.md) на языке Java 21. В этом примере мы создадим систему управления фондовой
+биржей, где различные компоненты (брокеры, аналитические модули) подписываются на обновления цен акций.
 
 ### 1. Определение интерфейсов
 
-#### [Observer.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/Observer.java)
+#### [Observer.java](observer/Observer.java)
 
-#### [Subject.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/Subject.java)
+#### [Subject.java](observer/Subject.java)
 
 ### 2. Реализация субъекта
 
-#### [StockMarket.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/StockMarket.java)
+#### [StockMarket.java](observer/StockMarket.java)
 
 ### 3. Реализация наблюдателей
 
-#### [Broker.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/Broker.java)
+#### [Broker.java](observer/Broker.java)
 
-#### [StockAnalyst.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/StockAnalyst.java)
+#### [StockAnalyst.java](observer/StockAnalyst.java)
 
 ### 4. Приложение
 
-#### [SyncApplication.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/Main.java)
+#### [SyncApplication.java](observer/Main.java)
 
 ### 5. Многопоточное приложение
 
-#### [AsyncApplication.java](src/main/java/InnovativeBuddies/universecommons/patterns/observer/async/AsyncApplication.java)
+#### [AsyncApplication.java](observer/async/AsyncApplication.java)
 
-> Этот пример демонстрирует использование паттерна "Наблюдатель" [3.1] в асинхронном приложении. Основной компонент асинхронно обновляет цены акций и уведомляет зарегистрированных
-> наблюдателей о каждом изменении. Это позволяет эффективно управлять состоянием системы и обеспечивает гибкость и масштабируемость.
+> Этот пример демонстрирует использование паттерна "Наблюдатель" [[3.1]](../../../../../../../general/SHORT_DESCRIPTIONS_OF_PETTERNS.md) в асинхронном приложении. Основной компонент асинхронно
+> обновляет цены акций и уведомляет зарегистрированных > наблюдателей о каждом изменении. Это позволяет эффективно управлять состоянием системы и обеспечивает гибкость и масштабируемость.
